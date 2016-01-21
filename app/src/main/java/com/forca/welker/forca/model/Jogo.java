@@ -1,5 +1,7 @@
 package com.forca.welker.forca.model;
 
+import android.util.Log;
+
 /**
  * Created by Caio Henrique on 21/01/2016.
  */
@@ -16,6 +18,8 @@ public class Jogo {
     public boolean verificaLetra(char letra,String palavra){
         if (!bancoDeLetras.contains(Character.toString(letra)) && palavra.contains(Character.toString(letra))){
             pos = palavra.indexOf(letra);
+            Log.v("palavra", palavra);
+            pontos += 10;
             return true;
         }
         if (!bancoDeLetras.contains(Character.toString(letra))){
@@ -24,9 +28,20 @@ public class Jogo {
         return false;
     }
 
-    public void substituiLetra(char letra, int pos, String palavra){
-        
+    public String substituiLetra(char letra, int pos, String campos){
+        StringBuilder campoSub = new StringBuilder(campos);
 
+        while (campos.contains(Character.toString(letra))){
+                                 
+
+        }
+
+        Log.v("antes", campoSub.toString());
+//        campoSub.setCharAt(pos, ' ');
+        campoSub.setCharAt(pos + 3,letra);
+        Log.v("depois",campoSub.toString());
+
+        return campoSub.toString();
     }
 
 

@@ -22,6 +22,7 @@ public class PainelJogo extends AppCompatActivity {
     TextView txtPalavra;
     String palavra;
     String espacos = "";
+    String espacosAux = "";
     char espaco = '_';
     Button btnA;
     Jogo jogo = new Jogo();
@@ -52,6 +53,17 @@ public class PainelJogo extends AppCompatActivity {
             public void onClick(View v) {
                 if (jogo.verificaLetra('a',palavra)){
                     Log.v("pos",String.valueOf(jogo.getPos()));
+                    espacosAux = espacos;
+                    espacos = null;
+                    espacos = jogo.substituiLetra('a',jogo.getPos(),espacosAux);
+                    txtPalavra.setText(null);
+                    txtPalavra.setText(espacos);
+                    txtPontos.setText(null);
+                    txtPontos.setText(String.valueOf(jogo.getPontos()));
+                }
+
+                if (jogo.getBancoDeLetras().contains(Character.toString('a'))){
+                    btnA.setVisibility(View.INVISIBLE);
                 }
             }
         });
