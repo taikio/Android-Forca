@@ -7,8 +7,8 @@ import android.util.Log;
  */
 public class Jogo {
     private String bancoDeLetras = "";
-    private int tentativas = 6;
-    private int pos = 0;
+    private int erros;
+    private int jogadas;
     private int pontos = 0;
 
 
@@ -17,9 +17,9 @@ public class Jogo {
 
     public boolean verificaLetra(char letra,String palavra){
         if (!bancoDeLetras.contains(Character.toString(letra)) && palavra.contains(Character.toString(letra))){
-            pos = palavra.indexOf(letra);
             Log.v("palavra", palavra);
             pontos += 10;
+            bancoDeLetras += letra;
             return true;
         }
         if (!bancoDeLetras.contains(Character.toString(letra))){
@@ -28,20 +28,36 @@ public class Jogo {
         return false;
     }
 
-    public String substituiLetra(char letra, int pos, String campos){
+    public String substituiLetra(char letra,String palavra, String campos){
         StringBuilder campoSub = new StringBuilder(campos);
+        char[] charPalavra;
+        charPalavra = palavra.toCharArray();
 
-        while (campos.contains(Character.toString(letra))){
-                                 
+            for (int i = 0; i < palavra.length(); i++){
+                if (charPalavra[i] == letra){
+                    campoSub.setCharAt(i ,letra);
+                }
+            }
 
-        }
+
 
         Log.v("antes", campoSub.toString());
-//        campoSub.setCharAt(pos, ' ');
-        campoSub.setCharAt(pos + 3,letra);
         Log.v("depois",campoSub.toString());
 
         return campoSub.toString();
+    }
+
+    public boolean verificaFimJogo(String espacos){
+        if (!espacos.contains(Character.toString('@')) || erros == 5){
+            return true;
+        }
+        return false;
+
+// if (jogadas == (palavra.length() - 1)){
+//            return true;
+//        }
+//        jogadas ++;
+//        return false;
     }
 
 
@@ -53,20 +69,20 @@ public class Jogo {
         this.bancoDeLetras = bancoDeLetras;
     }
 
-    public int getTentativas() {
-        return tentativas;
+    public int getErros() {
+        return erros;
     }
 
-    public void setTentativas(int tentativas) {
-        this.tentativas = tentativas;
+    public void setErros(int erros) {
+        this.erros += erros;
     }
 
-    public int getPos() {
-        return pos;
+    public int getJogadas() {
+        return jogadas;
     }
 
-    public void setPos(int pos) {
-        this.pos = pos;
+    public void setJogadas(int jogadas) {
+        this.jogadas = jogadas;
     }
 
     public int getPontos() {

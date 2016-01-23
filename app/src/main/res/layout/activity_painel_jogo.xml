@@ -111,7 +111,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="K"
-        android:id="@+id/ntnK"
+        android:id="@+id/btnK"
         android:layout_alignBottom="@+id/btnJ"
         android:layout_toEndOf="@+id/btnJ" />
 
@@ -121,8 +121,8 @@
         android:layout_height="wrap_content"
         android:text="L"
         android:id="@+id/btnL"
-        android:layout_alignBottom="@+id/ntnK"
-        android:layout_toEndOf="@+id/ntnK" />
+        android:layout_alignBottom="@+id/btnK"
+        android:layout_toEndOf="@+id/btnK" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -176,7 +176,7 @@
         android:text="R"
         android:id="@+id/btnR"
         android:layout_alignBottom="@+id/btnQ"
-        android:layout_alignStart="@+id/ntnK" />
+        android:layout_alignStart="@+id/btnK" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -253,7 +253,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/txtPalavra"
+        android:id="@+id/txtPalava"
         android:textSize="25dp"
         android:layout_above="@+id/btnC"
         android:layout_centerHorizontal="true" />
@@ -279,17 +279,18 @@
         android:id="@+id/imgForca"
         android:layout_alignParentStart="true"
         android:layout_toStartOf="@+id/btnE"
-        android:layout_above="@+id/txtPalavra"
+        android:layout_above="@+id/txtPalava"
         android:layout_alignParentTop="true"
-        android:src="@drawable/forca"
-        android:layout_alignEnd="@+id/txtPalavra" />
+        android:src="@drawable/background"
+        android:layout_alignEnd="@+id/txtPalava" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="É uma fruta"
         android:id="@+id/txtDica"
-        android:layout_above="@+id/txtPalavra"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/txtPalava"
+        android:layout_centerHorizontal="true"
+        android:textSize="10dp" />
 
 </RelativeLayout>
