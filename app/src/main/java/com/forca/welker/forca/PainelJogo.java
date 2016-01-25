@@ -1,5 +1,6 @@
 package com.forca.welker.forca;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +19,7 @@ public class PainelJogo extends AppCompatActivity {
     TextView txtDica;
     TextView txtPalavra;
     String palavra;
+    String dica;
     String espacos = "";
     String espacosAux = "";
     char espaco = '@';
@@ -32,7 +34,8 @@ public class PainelJogo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_painel_jogo);
 
-        palavra = "manga";
+        palavra = "tamarindo";
+        dica = "é uma fruta";
 
         // Calcula quantidade de espaços
         for (int i = 0;i < palavra.length(); i++){
@@ -45,6 +48,8 @@ public class PainelJogo extends AppCompatActivity {
         txtPalavra.setText(espacos);
         // Atribui os pontos iniciais
         txtPontos.setText(String.valueOf(jogo.getPontos()));
+        // Atribui a dica
+        txtDica.setText(dica);
 
         btnA.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +64,7 @@ public class PainelJogo extends AppCompatActivity {
                     txtPontos.setText(null);
                     txtPontos.setText(String.valueOf(jogo.getPontos()));
                 } else if (!jogo.verificaLetra(letra, palavra)) {
-                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_SHORT).show();
 
                     jogo.setErros(1);
                     trocaImg();
@@ -68,6 +73,8 @@ public class PainelJogo extends AppCompatActivity {
 
                     if (jogo.getErros() == 5) {
                         Toast.makeText(PainelJogo.this, "Você Perdeu!", Toast.LENGTH_LONG).show();
+                        Intent it = new Intent(PainelJogo.this, MainActivity.class);
+                        startActivity(it);
                     } else {
                         Toast.makeText(PainelJogo.this, "Parabéns, você Ganhou!!!", Toast.LENGTH_LONG).show();
 
@@ -92,7 +99,7 @@ public class PainelJogo extends AppCompatActivity {
                     txtPontos.setText(null);
                     txtPontos.setText(String.valueOf(jogo.getPontos()));
                 } else if (!jogo.verificaLetra(letra, palavra)) {
-                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_SHORT).show();
 
                     jogo.setErros(1);
                     trocaImg();
@@ -101,6 +108,8 @@ public class PainelJogo extends AppCompatActivity {
 
                     if (jogo.getErros() == 5) {
                         Toast.makeText(PainelJogo.this, "Você Perdeu!", Toast.LENGTH_LONG).show();
+                        Intent it = new Intent(PainelJogo.this, MainActivity.class);
+                        startActivity(it);
                     } else {
                         Toast.makeText(PainelJogo.this, "Parabéns, você Ganhou!!!", Toast.LENGTH_LONG).show();
 
@@ -127,7 +136,7 @@ public class PainelJogo extends AppCompatActivity {
                 }
 
                 else if (!jogo.verificaLetra(letra, palavra)) {
-                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_SHORT).show();
 
                     jogo.setErros(1);
                     trocaImg();
@@ -136,6 +145,8 @@ public class PainelJogo extends AppCompatActivity {
 
                     if (jogo.getErros() == 5){
                         Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_LONG).show();
+                        Intent it = new Intent(PainelJogo.this, MainActivity.class);
+                        startActivity(it);
                     }else{
                         Toast.makeText(PainelJogo.this,"Parabéns, você Ganhou!!!",Toast.LENGTH_LONG).show();
 
@@ -162,7 +173,7 @@ public class PainelJogo extends AppCompatActivity {
                 }
 
                 else if (!jogo.verificaLetra(letra, palavra)) {
-                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_SHORT).show();
 
                     jogo.setErros(1);
                     trocaImg();
@@ -171,6 +182,8 @@ public class PainelJogo extends AppCompatActivity {
 
                     if (jogo.getErros() == 5){
                         Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_LONG).show();
+                        Intent it = new Intent(PainelJogo.this, MainActivity.class);
+                        startActivity(it);
                     }else{
                         Toast.makeText(PainelJogo.this,"Parabéns, você Ganhou!!!",Toast.LENGTH_LONG).show();
 
@@ -197,7 +210,7 @@ public class PainelJogo extends AppCompatActivity {
                 }
 
                 else if (!jogo.verificaLetra(letra, palavra)) {
-                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_SHORT).show();
 
                     jogo.setErros(1);
                     trocaImg();
@@ -206,6 +219,8 @@ public class PainelJogo extends AppCompatActivity {
 
                     if (jogo.getErros() == 5){
                         Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_LONG).show();
+                        Intent it = new Intent(PainelJogo.this, MainActivity.class);
+                        startActivity(it);
                     }else{
                         Toast.makeText(PainelJogo.this,"Parabéns, você Ganhou!!!",Toast.LENGTH_LONG).show();
 
@@ -232,7 +247,7 @@ public class PainelJogo extends AppCompatActivity {
                 }
 
                 else if (!jogo.verificaLetra(letra, palavra)) {
-                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_SHORT).show();
 
                     jogo.setErros(1);
                     trocaImg();
@@ -241,6 +256,8 @@ public class PainelJogo extends AppCompatActivity {
 
                     if (jogo.getErros() == 5){
                         Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_LONG).show();
+                        Intent it = new Intent(PainelJogo.this, MainActivity.class);
+                        startActivity(it);
                     }else{
                         Toast.makeText(PainelJogo.this,"Parabéns, você Ganhou!!!",Toast.LENGTH_LONG).show();
 
@@ -267,7 +284,7 @@ public class PainelJogo extends AppCompatActivity {
                 }
 
                 else if (!jogo.verificaLetra(letra, palavra)) {
-                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_SHORT).show();
 
                     jogo.setErros(1);
                     trocaImg();
@@ -276,6 +293,8 @@ public class PainelJogo extends AppCompatActivity {
 
                     if (jogo.getErros() == 5){
                         Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_LONG).show();
+                        Intent it = new Intent(PainelJogo.this, MainActivity.class);
+                        startActivity(it);
                     }else{
                         Toast.makeText(PainelJogo.this,"Parabéns, você Ganhou!!!",Toast.LENGTH_LONG).show();
 
@@ -302,7 +321,7 @@ public class PainelJogo extends AppCompatActivity {
                 }
 
                 else if (!jogo.verificaLetra(letra, palavra)) {
-                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_SHORT).show();
 
                     jogo.setErros(1);
                     trocaImg();
@@ -311,6 +330,8 @@ public class PainelJogo extends AppCompatActivity {
 
                     if (jogo.getErros() == 5){
                         Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_LONG).show();
+                        Intent it = new Intent(PainelJogo.this, MainActivity.class);
+                        startActivity(it);
                     }else{
                         Toast.makeText(PainelJogo.this,"Parabéns, você Ganhou!!!",Toast.LENGTH_LONG).show();
 
@@ -337,7 +358,7 @@ public class PainelJogo extends AppCompatActivity {
                 }
 
                 else if (!jogo.verificaLetra(letra, palavra)) {
-                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_SHORT).show();
 
                     jogo.setErros(1);
                     trocaImg();
@@ -346,6 +367,8 @@ public class PainelJogo extends AppCompatActivity {
 
                     if (jogo.getErros() == 5){
                         Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_LONG).show();
+                        Intent it = new Intent(PainelJogo.this, MainActivity.class);
+                        startActivity(it);
                     }else{
                         Toast.makeText(PainelJogo.this,"Parabéns, você Ganhou!!!",Toast.LENGTH_LONG).show();
 
@@ -372,7 +395,7 @@ public class PainelJogo extends AppCompatActivity {
                 }
 
                 else if (!jogo.verificaLetra(letra, palavra)) {
-                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_SHORT).show();
 
                     jogo.setErros(1);
                     trocaImg();
@@ -381,6 +404,8 @@ public class PainelJogo extends AppCompatActivity {
 
                     if (jogo.getErros() == 5){
                         Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_LONG).show();
+                        Intent it = new Intent(PainelJogo.this, MainActivity.class);
+                        startActivity(it);
                     }else{
                         Toast.makeText(PainelJogo.this,"Parabéns, você Ganhou!!!",Toast.LENGTH_LONG).show();
 
@@ -407,7 +432,7 @@ public class PainelJogo extends AppCompatActivity {
                 }
 
                 else if (!jogo.verificaLetra(letra, palavra)) {
-                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
 
                     jogo.setErros(1);
                     trocaImg();
@@ -415,7 +440,9 @@ public class PainelJogo extends AppCompatActivity {
                 if (jogo.verificaFimJogo(espacos)) {
 
                     if (jogo.getErros() == 5){
-                        Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_LONG).show();
+                        Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_SHORT).show();
+                        Intent it = new Intent(PainelJogo.this, MainActivity.class);
+                        startActivity(it);
                     }else{
                         Toast.makeText(PainelJogo.this,"Parabéns, você Ganhou!!!",Toast.LENGTH_LONG).show();
 
@@ -442,7 +469,7 @@ public class PainelJogo extends AppCompatActivity {
                 }
 
                 else if (!jogo.verificaLetra(letra, palavra)) {
-                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_SHORT).show();
 
                     jogo.setErros(1);
                     trocaImg();
@@ -451,6 +478,8 @@ public class PainelJogo extends AppCompatActivity {
 
                     if (jogo.getErros() == 5){
                         Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_LONG).show();
+                        Intent it = new Intent(PainelJogo.this, MainActivity.class);
+                        startActivity(it);
                     }else{
                         Toast.makeText(PainelJogo.this,"Parabéns, você Ganhou!!!",Toast.LENGTH_LONG).show();
 
@@ -477,7 +506,7 @@ public class PainelJogo extends AppCompatActivity {
                 }
 
                 else if (!jogo.verificaLetra(letra, palavra)) {
-                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
 
                     jogo.setErros(1);
                     trocaImg();
@@ -485,7 +514,9 @@ public class PainelJogo extends AppCompatActivity {
                 if (jogo.verificaFimJogo(espacos)) {
 
                     if (jogo.getErros() == 5){
-                        Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_LONG).show();
+                        Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_SHORT).show();
+                        Intent it = new Intent(PainelJogo.this, MainActivity.class);
+                        startActivity(it);
                     }else{
                         Toast.makeText(PainelJogo.this,"Parabéns, você Ganhou!!!",Toast.LENGTH_LONG).show();
 
@@ -512,7 +543,7 @@ public class PainelJogo extends AppCompatActivity {
                 }
 
                 else if (!jogo.verificaLetra(letra, palavra)) {
-                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_SHORT).show();
 
                     jogo.setErros(1);
                     trocaImg();
@@ -521,6 +552,8 @@ public class PainelJogo extends AppCompatActivity {
 
                     if (jogo.getErros() == 5){
                         Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_LONG).show();
+                        Intent it = new Intent(PainelJogo.this, MainActivity.class);
+                        startActivity(it);
                     }else{
                         Toast.makeText(PainelJogo.this,"Parabéns, você Ganhou!!!",Toast.LENGTH_LONG).show();
 
@@ -547,7 +580,7 @@ public class PainelJogo extends AppCompatActivity {
                 }
 
                 else if (!jogo.verificaLetra(letra, palavra)) {
-                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_SHORT).show();
 
                     jogo.setErros(1);
                     trocaImg();
@@ -556,6 +589,8 @@ public class PainelJogo extends AppCompatActivity {
 
                     if (jogo.getErros() == 5){
                         Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_LONG).show();
+                        Intent it = new Intent(PainelJogo.this, MainActivity.class);
+                        startActivity(it);
                     }else{
                         Toast.makeText(PainelJogo.this,"Parabéns, você Ganhou!!!",Toast.LENGTH_LONG).show();
 
@@ -582,7 +617,7 @@ public class PainelJogo extends AppCompatActivity {
                 }
 
                 else if (!jogo.verificaLetra(letra, palavra)) {
-                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_SHORT).show();
 
                     jogo.setErros(1);
                     trocaImg();
@@ -591,6 +626,8 @@ public class PainelJogo extends AppCompatActivity {
 
                     if (jogo.getErros() == 5){
                         Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_LONG).show();
+                        Intent it = new Intent(PainelJogo.this, MainActivity.class);
+                        startActivity(it);
                     }else{
                         Toast.makeText(PainelJogo.this,"Parabéns, você Ganhou!!!",Toast.LENGTH_LONG).show();
 
@@ -617,7 +654,7 @@ public class PainelJogo extends AppCompatActivity {
                 }
 
                 else if (!jogo.verificaLetra(letra, palavra)) {
-                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_SHORT).show();
 
                     jogo.setErros(1);
                     trocaImg();
@@ -626,6 +663,8 @@ public class PainelJogo extends AppCompatActivity {
 
                     if (jogo.getErros() == 5){
                         Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_LONG).show();
+                        Intent it = new Intent(PainelJogo.this, MainActivity.class);
+                        startActivity(it);
                     }else{
                         Toast.makeText(PainelJogo.this,"Parabéns, você Ganhou!!!",Toast.LENGTH_LONG).show();
 
@@ -652,7 +691,7 @@ public class PainelJogo extends AppCompatActivity {
                 }
 
                 else if (!jogo.verificaLetra(letra, palavra)) {
-                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_SHORT).show();
 
                     jogo.setErros(1);
                     trocaImg();
@@ -661,6 +700,8 @@ public class PainelJogo extends AppCompatActivity {
 
                     if (jogo.getErros() == 5){
                         Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_LONG).show();
+                        Intent it = new Intent(PainelJogo.this, MainActivity.class);
+                        startActivity(it);
                     }else{
                         Toast.makeText(PainelJogo.this,"Parabéns, você Ganhou!!!",Toast.LENGTH_LONG).show();
 
@@ -687,7 +728,7 @@ public class PainelJogo extends AppCompatActivity {
                 }
 
                 else if (!jogo.verificaLetra(letra, palavra)) {
-                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_SHORT).show();
 
                     jogo.setErros(1);
                     trocaImg();
@@ -696,6 +737,8 @@ public class PainelJogo extends AppCompatActivity {
 
                     if (jogo.getErros() == 5){
                         Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_LONG).show();
+                        Intent it = new Intent(PainelJogo.this, MainActivity.class);
+                        startActivity(it);
                     }else{
                         Toast.makeText(PainelJogo.this,"Parabéns, você Ganhou!!!",Toast.LENGTH_LONG).show();
 
@@ -722,7 +765,7 @@ public class PainelJogo extends AppCompatActivity {
                 }
 
                 else if (!jogo.verificaLetra(letra, palavra)) {
-                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_SHORT).show();
 
                     jogo.setErros(1);
                     trocaImg();
@@ -731,6 +774,8 @@ public class PainelJogo extends AppCompatActivity {
 
                     if (jogo.getErros() == 5){
                         Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_LONG).show();
+                        Intent it = new Intent(PainelJogo.this, MainActivity.class);
+                        startActivity(it);
                     }else{
                         Toast.makeText(PainelJogo.this,"Parabéns, você Ganhou!!!",Toast.LENGTH_LONG).show();
 
@@ -757,7 +802,7 @@ public class PainelJogo extends AppCompatActivity {
                 }
 
                 else if (!jogo.verificaLetra(letra, palavra)) {
-                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_SHORT).show();
 
                     jogo.setErros(1);
                     trocaImg();
@@ -766,6 +811,8 @@ public class PainelJogo extends AppCompatActivity {
 
                     if (jogo.getErros() == 5){
                         Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_LONG).show();
+                        Intent it = new Intent(PainelJogo.this, MainActivity.class);
+                        startActivity(it);
                     }else{
                         Toast.makeText(PainelJogo.this,"Parabéns, você Ganhou!!!",Toast.LENGTH_LONG).show();
 
@@ -792,7 +839,7 @@ public class PainelJogo extends AppCompatActivity {
                 }
 
                 else if (!jogo.verificaLetra(letra, palavra)) {
-                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_SHORT).show();
 
                     jogo.setErros(1);
                     trocaImg();
@@ -801,6 +848,8 @@ public class PainelJogo extends AppCompatActivity {
 
                     if (jogo.getErros() == 5){
                         Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_LONG).show();
+                        Intent it = new Intent(PainelJogo.this, MainActivity.class);
+                        startActivity(it);
                     }else{
                         Toast.makeText(PainelJogo.this,"Parabéns, você Ganhou!!!",Toast.LENGTH_LONG).show();
 
@@ -834,7 +883,9 @@ public class PainelJogo extends AppCompatActivity {
                 if (jogo.verificaFimJogo(espacos)) {
 
                     if (jogo.getErros() == 5){
-                        Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_LONG).show();
+                        Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_SHORT).show();
+                        Intent it = new Intent(PainelJogo.this, MainActivity.class);
+                        startActivity(it);
                     }else{
                         Toast.makeText(PainelJogo.this,"Parabéns, você Ganhou!!!",Toast.LENGTH_LONG).show();
 
@@ -861,7 +912,7 @@ public class PainelJogo extends AppCompatActivity {
                 }
 
                 else if (!jogo.verificaLetra(letra, palavra)) {
-                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_SHORT).show();
 
                     jogo.setErros(1);
                     trocaImg();
@@ -870,6 +921,8 @@ public class PainelJogo extends AppCompatActivity {
 
                     if (jogo.getErros() == 5){
                         Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_LONG).show();
+                        Intent it = new Intent(PainelJogo.this, MainActivity.class);
+                        startActivity(it);
                     }else{
                         Toast.makeText(PainelJogo.this,"Parabéns, você Ganhou!!!",Toast.LENGTH_LONG).show();
 
@@ -896,7 +949,7 @@ public class PainelJogo extends AppCompatActivity {
                 }
 
                 else if (!jogo.verificaLetra(letra, palavra)) {
-                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_SHORT).show();
 
                     jogo.setErros(1);
                     trocaImg();
@@ -905,6 +958,8 @@ public class PainelJogo extends AppCompatActivity {
 
                     if (jogo.getErros() == 5){
                         Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_LONG).show();
+                        Intent it = new Intent(PainelJogo.this, MainActivity.class);
+                        startActivity(it);
                     }else{
                         Toast.makeText(PainelJogo.this,"Parabéns, você Ganhou!!!",Toast.LENGTH_LONG).show();
 
@@ -931,7 +986,7 @@ public class PainelJogo extends AppCompatActivity {
                 }
 
                 else if (!jogo.verificaLetra(letra, palavra)) {
-                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_LONG).show();
+//                    Toast.makeText(PainelJogo.this, "Letra incorreta", Toast.LENGTH_SHORT).show();
 
                     jogo.setErros(1);
                     trocaImg();
@@ -940,6 +995,9 @@ public class PainelJogo extends AppCompatActivity {
 
                     if (jogo.getErros() == 5){
                         Toast.makeText(PainelJogo.this,"Você Perdeu!",Toast.LENGTH_LONG).show();
+                        Intent it = new Intent(PainelJogo.this, MainActivity.class);
+                        startActivity(it);
+
                     }else{
                         Toast.makeText(PainelJogo.this,"Parabéns, você Ganhou!!!",Toast.LENGTH_LONG).show();
 

@@ -264,14 +264,15 @@
         android:text="Pontuação"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
-        android:layout_toStartOf="@+id/btnG" />
+        android:layout_alignEnd="@+id/btnG" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/txtPontos"
+        android:layout_alignEnd="@+id/textView"
         android:layout_below="@+id/textView"
-        android:layout_alignStart="@+id/textView" />
+        android:layout_alignStart="@+id/btnG" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -287,7 +288,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="É uma fruta"
         android:id="@+id/txtDica"
         android:layout_above="@+id/txtPalava"
         android:layout_centerHorizontal="true"
